@@ -4,17 +4,18 @@ using UnityEngine;
 public static class GameData
 {
     // Tile Data
-    public static Dictionary<Vector2Int, TileData> tileMap = new Dictionary<Vector2Int, TileData>();
+    public static Dictionary<Vector2Int, Tile> tileMap = new Dictionary<Vector2Int, Tile>();
 
-    public static void RegisterTile(TileData tile)
+    public static void RegisterTile(Vector2Int pos, Tile tile)
     {
-        tileMap[tile.position] = tile;
+        tileMap[pos] = tile;
+        tile.UpdateTile();
     }
 
-    public static TileData GetTileData(Vector2Int pos)
+    public static Tile GetTile(Vector2Int pos)
     {
-        tileMap.TryGetValue(pos, out TileData data);
-        return data;
+        tileMap.TryGetValue(pos, out Tile tile);
+        return tile;
     }
 
     // Player data
@@ -33,7 +34,7 @@ public static class GameData
 
     public static Vector2 GetPlayerGlobalPosition()
     {
-        return GridsManager.instance.GetTilePosition(playerPosition);
+        return TilesManager.instance.GetTilePosition(playerPosition);
     }
 
     public static bool HasKey()

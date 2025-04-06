@@ -2,9 +2,16 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
+    [SerializeField] Sprite[] tileSprites;
+    [SerializeField] SpriteRenderer spr;
     [SerializeField] GameObject wallPrefab;
     private GameObject wall;
-    private int tileType;
+    private int tileType; // -1: no tile, 0: normal, 1: trap, 2: lock, 3: key, 4: wall
+
+    public void UpdateTile()
+    {
+        spr.sprite = tileSprites[tileType];
+    }
 
     public void OnTileClick()
     {
@@ -25,7 +32,12 @@ public class Tile : MonoBehaviour
         }
     }
 
-    public void SetType(int type)
+    public int GetTileType()
+    {
+        return tileType;
+    }
+
+    public void SetTileType(int type)
     {
         tileType = type;
     }

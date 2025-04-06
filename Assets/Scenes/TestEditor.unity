@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapRows:
   - OSO!
-  - OOOO
+  - OLBO
   - O!OO
   - OO!G
   gridSize: 4
@@ -282,7 +282,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 6140240601278509192, guid: a384f0cec33c5a9498a4f21b005f9da3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

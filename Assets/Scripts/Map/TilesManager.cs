@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GridsManager : MonoBehaviour
+public class TilesManager : MonoBehaviour
 {
     [Header("Grid Settings")]
     [SerializeField] string[] mapRows;
@@ -12,7 +12,7 @@ public class GridsManager : MonoBehaviour
     [SerializeField] GameObject tilePrefab;
     [SerializeField] GameObject tileParent;
     [SerializeField] GameObject playerPrefab;
-    public static GridsManager instance;
+    public static TilesManager instance;
     private GameObject[,] tiles;
 
     void Awake()
@@ -61,11 +61,9 @@ public class GridsManager : MonoBehaviour
                 tile.name = $"Tile ({i},{j})";
                 tiles[i, j] = tile;
 
-                TileData tileData = new TileData(new Vector2Int(i, j), tileType);
-                GameData.RegisterTile(tileData);
-
                 Tile tileComp = tile.GetComponent<Tile>();
-                tileComp.SetType(tileType);
+                tileComp.SetTileType(tileType);
+                GameData.RegisterTile(new Vector2Int(i,j), tileComp);
             }
         }
     }

@@ -19,9 +19,9 @@ public class DfsAgent : MonoBehaviour
 
     public void RunDFS()
     {
-        int size = GridsManager.instance.gridSize;
+        int size = TilesManager.instance.gridSize;
         isVisited = new bool[size, size];
-        StartCoroutine(DFS(GridsManager.instance.startPos));
+        StartCoroutine(DFS(TilesManager.instance.startPos));
     }
 
     private IEnumerator DFS(Vector2Int currPos)
@@ -41,10 +41,10 @@ public class DfsAgent : MonoBehaviour
             // update player position
             GameData.SetPlayerPosition(pos);
 
-            // Interact with current node
-            TileData tileData = GameData.GetTileData(pos);
+            // load current tile
+            Tile currTile = GameData.GetTile(pos);
 
-            switch(tileData.tileType)
+            switch(currTile.GetTileType())
             {
                 // 1: trap, process death, now it just reloads the scene
                 case 1:
@@ -55,15 +55,15 @@ public class DfsAgent : MonoBehaviour
                 case 2:
                     Debug.Log($"Used key, key left {GameData.keyCount}");
                     GameData.UseKey();
-                    tileData.tileType = 0;
-                    GameData.RegisterTile(tileData);
+                    currTile.SetTileType(0);
+                    GameData.RegisterTile(pos, currTile);
                     break;
                 // 3: key, become normal tile after picked up
                 case 3:
                     Debug.Log($"Got key, key left {GameData.keyCount}");
                     GameData.GetKey();
-                    tileData.tileType = 0;
-                    GameData.RegisterTile(tileData);
+                    currTile.SetTileType(0);
+                    GameData.RegisterTile(pos, currTile);
                     break;
 
                 default:
@@ -71,10 +71,10 @@ public class DfsAgent : MonoBehaviour
             }
 
             // Move player to this node
-            Vector3 targetPos = GridsManager.instance.GetTilePosition(pos) + offset;
+            Vector3 targetPos = TilesManager.instance.GetTilePosition(pos) + offset;
             yield return StartCoroutine(MoveTo(targetPos));
 
-            if (pos == GridsManager.instance.targetPos) yield break;
+            if (pos == TilesManager.instance.targetPos) yield break;
 
             Vector2Int[] directions = {
                 new Vector2Int(pos.x, pos.y - 1),
@@ -113,7 +113,7 @@ public class DfsAgent : MonoBehaviour
                 if (nextBranch.HasValue)
                 {
                     Debug.Log($"Teleporting to {nextBranch.Value}");
-                    transform.position = GridsManager.instance.GetTilePosition(nextBranch.Value) + offset;
+                    transform.position = TilesManager.instance.GetTilePosition(nextBranch.Value) + offset;
                     yield return new WaitForSeconds(1.0f);
                 }
             }
@@ -135,6 +135,6 @@ public class DfsAgent : MonoBehaviour
 
     private bool IsValid(Vector2Int pos)
     {
-        return GridsManager.instance.IsValid(pos);
+        return TilesManager.instance.IsValid(pos);
     }
 }
