@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 3586087900285728792, guid: 4bab6a2b7e957304dbde659081fe6901, type: 3}
-  m_Color: {r: 0.6830188, g: 0.6830188, b: 0.6830188, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -102,11 +102,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileSprites:
-  - {fileID: 3586087900285728792, guid: 4bab6a2b7e957304dbde659081fe6901, type: 3}
-  - {fileID: 2055048509089201314, guid: 822e72fd079a0564bb5bc779f707ed3f, type: 3}
+  - {fileID: 3586087900285728792, guid: 3dd18c7960fc1c146999b86b3265cd1c, type: 3}
+  - {fileID: 1319557674939140409, guid: b79613ee338c88a40b4cd98f0f16b7fd, type: 3}
   - {fileID: 1999051882609757779, guid: d9b3ff3702b3b564fa3e9530182da17a, type: 3}
   - {fileID: 586349655260128423, guid: 562b20042b9d29344815bb97ffdbf0b5, type: 3}
   - {fileID: 3586087900285728792, guid: 4bab6a2b7e957304dbde659081fe6901, type: 3}
+  - {fileID: 4428377931452148615, guid: 6ea9039921cd60343923d19f2f65723d, type: 3}
   spr: {fileID: 537498803801537133}
   wallPrefab: {fileID: 6260768012509208229, guid: e21790e9f518c7e42a44772fb008b3f8, type: 3}
 --- !u!61 &2482144606428899986

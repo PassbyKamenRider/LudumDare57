@@ -60,6 +60,7 @@ public class TilesManager : MonoBehaviour
                 GameObject tile = Instantiate(tilePrefab, pos, Quaternion.identity, tileParent.transform);
                 tile.name = $"Tile ({i},{j})";
                 Tile tileComp = tile.GetComponent<Tile>();
+                if (c == 'G') tileComp.SetTarget();
                 tiles[i, j] = tileComp;
                 tileComp.SetTileType(tileType);
                 GameData.RegisterTile(new Vector2Int(i,j), tileComp);

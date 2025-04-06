@@ -6,6 +6,7 @@ public class Tile : MonoBehaviour
     [SerializeField] SpriteRenderer spr;
     [SerializeField] GameObject wallPrefab;
     private GameObject wall;
+    private bool isTarget;
     private int tileType; // -1: no tile, 0: normal, 1: trap, 2: lock, 3: key, 4: wall
 
     // void Start()
@@ -16,6 +17,12 @@ public class Tile : MonoBehaviour
     public void UpdateTile()
     {
         spr.sprite = tileSprites[tileType];
+        if (isTarget) spr.sprite = tileSprites[tileSprites.Length-1];
+    }
+
+    public void SetTarget()
+    {
+        isTarget = true;
     }
 
     // public void AnyTileChanged()
