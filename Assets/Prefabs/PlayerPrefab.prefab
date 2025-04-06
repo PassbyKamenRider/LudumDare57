@@ -303,6 +303,7 @@ GameObject:
   - component: {fileID: 7025145739674028252}
   - component: {fileID: 3179616199490732831}
   - component: {fileID: 6877602088223415794}
+  - component: {fileID: 667553391102239376}
   m_Layer: 0
   m_Name: PlayerPrefab
   m_TagString: Untagged
@@ -370,7 +371,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -3184702855875162379, guid: 3d956e5194a758a49bb85b61101d45f7, type: 3}
+  m_Sprite: {fileID: -6825857503417359873, guid: 98cef17987f625248baf1f4ca7e0eefb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -402,7 +403,28 @@ MonoBehaviour:
   laserClip: {fileID: 8300000, guid: b23634d67af1cdd4bb034e0a58a8356b, type: 3}
   trapClip: {fileID: 8300000, guid: 16d07318eef3eb04982fa3e23917926a, type: 3}
   targetClip: {fileID: 8300000, guid: 7e1565da37752f049af43910ca6ff3ef, type: 3}
-  bumpClip: {fileID: 8300000, guid: f8d26decd2528814ba865be075507403, type: 3}
+--- !u!95 &667553391102239376
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6810788822689778486}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0fb49c63eee6287408af349e9d9d2a14, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8844678054821330205
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
+    [SerializeField] AudioSource wallAudio;
     [SerializeField] Sprite[] tileSprites;
     [SerializeField] SpriteRenderer spr;
     [SerializeField] GameObject wallPrefab;
@@ -36,12 +37,14 @@ public class Tile : MonoBehaviour
         if (tileType == 0)
         {
             // if is normal grid, set type to wall
+            wallAudio.Play();
             tileType = 4;
             wall = Instantiate(wallPrefab, transform.position, Quaternion.identity, transform);
         }
         else if (tileType == 4)
         {
             // if is wall grid, set type to normal, remove wall
+            wallAudio.Play();
             tileType = 0;
             Destroy(wall);
             wall = null;

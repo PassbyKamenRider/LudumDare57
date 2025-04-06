@@ -13,6 +13,12 @@ public class DfsAgent : MonoBehaviour
     [SerializeField] AudioClip pickupClip, laserClip, trapClip, targetClip;
     private bool[,] isVisited;
     private Vector2Int lastDirection = Vector2Int.zero;
+    private Animator animator;
+
+    void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     void Update()
     {
@@ -93,6 +99,7 @@ public class DfsAgent : MonoBehaviour
             }
 
             Vector2Int moveDirection = pos - prevPosition;
+            Debug.Log($"Player moves towards direction {moveDirection}");
             if (moveDirection != lastDirection)
             {
                 if (lastDirection == Vector2Int.zero)
@@ -101,7 +108,6 @@ public class DfsAgent : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log($"Player turns {moveDirection}");
                     bumpAudio.Play();
                 }
             }
@@ -172,6 +178,13 @@ public class DfsAgent : MonoBehaviour
 
     private IEnumerator MoveTo(Vector3 targetPos)
     {
+        if (animator != null)
+        {
+            animator.SetFloat("MoveX", lastDirection.x);
+            animator.SetFloat("MoveY", lastDirection.y);
+            animator.SetBool("isMoving", true);
+        }
+
         if (walkAudio != null && !walkAudio.isPlaying)
         {
             walkAudio.Play();
@@ -184,6 +197,11 @@ public class DfsAgent : MonoBehaviour
         }
 
         transform.position = targetPos;
+
+        if (animator != null)
+        {
+            animator.SetBool("isMoving", false);
+        }
 
         if (walkAudio != null && walkAudio.isPlaying)
         {

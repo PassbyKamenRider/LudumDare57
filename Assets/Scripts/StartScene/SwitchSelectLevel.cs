@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 class SwitchSelectLevel : MonoBehaviour
 {
+    public AudioSource clickAudio;
     public int currentLevel = 0;
-    public TextMeshProUGUI textShowLevel;
+    public Image levelImage;
+    public Sprite[] levelSprites;
     public void HandleLevelSwitch(bool isLeft)
     {
         int count = GameManager.Instance.levelNames.Count;
@@ -18,11 +20,16 @@ class SwitchSelectLevel : MonoBehaviour
         {
             currentLevel = (currentLevel + 1 ) % count;
         }
-        textShowLevel.text = GameManager.Instance.levelNames[currentLevel];
+        levelImage.sprite = levelSprites[currentLevel];
     }
     public void HandleLevelStart()
     {
         string levelName = GameManager.Instance.levelNames[currentLevel];
         SceneManager.LoadScene(levelName);
+    }
+
+    public void PlayClickAudio()
+    {
+        clickAudio.Play();
     }
 }

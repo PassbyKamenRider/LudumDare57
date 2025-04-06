@@ -150,17 +150,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapRows:
-  - SOOOOO!OO
-  - OOO!OO!OO
-  - '#OOOOOOL#'
-  - '#O###OOO#'
-  - '#O#OOOOO'
-  - '#O#!O##O!'
-  - '#O#OOO#!O'
-  - '#O#O!OOOO'
-  - OL##OOOOOO
-  - OO##OOO!B
-  - OOOOOO!BG
+  - SOOOOOO!OLOOO
+  - OO!OOO#OO###O
+  - OO#OOO#OO###O
+  - OOOO!OOOO###O
+  - '!O#####!O###O'
+  - OO#####OO#LOO
+  - OO##OOOOO#OOO
+  - OL##OLO####OO
+  - OO##OO!OO#OOO
+  - OO##OO##O#OO!
+  - O!OOOOOOO#OOO
+  - OOOOOOO!O#OOO
+  - O####O######O
+  - O####!######O
+  - OOL##O######O
+  - OOO##OOOOOO!O
+  - O####O##OOO!B
+  - OOOOOO##OOOBB
+  - OOOOOO!OOOBBG
   gridSize: 4
   tileSize: 1
   startPos: {x: 0, y: 0}
@@ -308,7 +316,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1500871328
+--- !u!1001 &1116510965
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -493,7 +501,7 @@ Transform:
   m_GameObject: {fileID: 1630940846}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 3, z: -10}
+  m_LocalPosition: {x: -8, y: 7, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -564,4 +572,4 @@ SceneRoots:
   - {fileID: 88055121}
   - {fileID: 270279164}
   - {fileID: 1010338957}
-  - {fileID: 1500871328}
+  - {fileID: 1116510965}
