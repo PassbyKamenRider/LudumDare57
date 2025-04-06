@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 40a8cda68972c8143a9ce772ed0076ad
+guid: c35ff12d80c32054f93cd48cd1592206
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3865389181699652119
-    second: ItemKey_0
+      213: -3865013783619271978
+    second: "QQ\u622A\u56FE20250406124750_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ItemKey_0
+      name: "QQ\u622A\u56FE20250406124750_0"
       rect:
         serializedVersion: 2
-        x: 11
-        y: 7
-        width: 101
-        height: 119
+        x: 0
+        y: 0
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9e5872ad4016b5ac0800000000000000
-      internalID: -3865389181699652119
+      spriteID: 6d282670176bc5ac0800000000000000
+      internalID: -3865013783619271978
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      ItemKey_0: -3865389181699652119
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
