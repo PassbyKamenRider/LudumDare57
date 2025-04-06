@@ -9,13 +9,14 @@ class SwitchSelectLevel : MonoBehaviour
     public TextMeshProUGUI textShowLevel;
     public void HandleLevelSwitch(bool isLeft)
     {
+        int count = GameManager.Instance.levelNames.Count;
         if (isLeft)
         {
-            currentLevel = (currentLevel - 1) % GameManager.Instance.levelNames.Count;
+            currentLevel = (currentLevel - 1 + count) % count;
         }
         else
         {
-            currentLevel = (currentLevel + 1 ) % GameManager.Instance.levelNames.Count;
+            currentLevel = (currentLevel + 1 ) % count;
         }
         textShowLevel.text = GameManager.Instance.levelNames[currentLevel];
     }

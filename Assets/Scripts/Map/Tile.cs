@@ -33,17 +33,16 @@ public class Tile : MonoBehaviour
     public void OnTileClick()
     {
         // cannot place on special tiles
-        if (tileType != 0) return;
-
-        // set tile type to wall
-        tileType = 4;
-
-        if (wall == null)
+        if (tileType == 0)
         {
+            // if is normal grid, set type to wall
+            tileType = 4;
             wall = Instantiate(wallPrefab, transform.position, Quaternion.identity, transform);
         }
-        else
+        else if (tileType == 4)
         {
+            // if is wall grid, set type to normal, remove wall
+            tileType = 0;
             Destroy(wall);
             wall = null;
         }
