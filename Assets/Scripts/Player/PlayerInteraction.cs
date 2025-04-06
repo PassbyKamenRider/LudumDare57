@@ -17,6 +17,7 @@ public class PlayerInteraction : MonoBehaviour
                 Tile tile = hit.collider.GetComponent<Tile>();
                 if (tile != null)
                 {
+                    EventManager.Instance.Invoke(GlobalEvent.AnyTileChangedByPlayer);
                     tile.OnTileClick();
                 }
             }

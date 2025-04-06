@@ -13,7 +13,7 @@ public class TilesManager : MonoBehaviour
     [SerializeField] GameObject tileParent;
     [SerializeField] GameObject playerPrefab;
     public static TilesManager instance;
-    private GameObject[,] tiles;
+    private Tile[,] tiles;
 
     void Awake()
     {
@@ -32,7 +32,7 @@ public class TilesManager : MonoBehaviour
         int width = mapRows[0].Length;
 
         gridSize = Mathf.Max(height, width);
-        tiles = new GameObject[gridSize, gridSize];
+        tiles = new Tile[gridSize, gridSize];
 
         for (int j = 0; j < height; j++)
         {
@@ -59,9 +59,8 @@ public class TilesManager : MonoBehaviour
                 Vector3 pos = GetTilePosition(new Vector2Int(i,j));
                 GameObject tile = Instantiate(tilePrefab, pos, Quaternion.identity, tileParent.transform);
                 tile.name = $"Tile ({i},{j})";
-                tiles[i, j] = tile;
-
                 Tile tileComp = tile.GetComponent<Tile>();
+                tiles[i, j] = tileComp;
                 tileComp.SetTileType(tileType);
                 GameData.RegisterTile(new Vector2Int(i,j), tileComp);
             }
@@ -90,10 +89,7 @@ public class TilesManager : MonoBehaviour
     {
         if (pos.x < 0 || pos.x >= gridSize || pos.y < 0 || pos.y >= gridSize) return false;
 
-        GameObject tileObj = tiles[pos.x, pos.y];
-        if (tileObj == null) return false;
-
-        Tile tile = tileObj.GetComponent<Tile>();
+        Tile tile = tiles[pos.x, pos.y];
         return tile != null && tile.IsValid();
     }
 }

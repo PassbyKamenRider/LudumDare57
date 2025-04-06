@@ -8,10 +8,20 @@ public class Tile : MonoBehaviour
     private GameObject wall;
     private int tileType; // -1: no tile, 0: normal, 1: trap, 2: lock, 3: key, 4: wall
 
+    // void Start()
+    // {
+    //     EventManager.Instance.AddListener(GlobalEvent.AnyTileChangedByPlayer, AnyTileChanged);
+    // }
+
     public void UpdateTile()
     {
         spr.sprite = tileSprites[tileType];
     }
+
+    // public void AnyTileChanged()
+    // {
+    //     Debug.Log(111111111);
+    // }
 
     public void OnTileClick()
     {
