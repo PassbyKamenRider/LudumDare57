@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerInteract : MonoBehaviour
+public class PlayerInteraction : MonoBehaviour
 {
     [SerializeField] LayerMask tileLayerMask;
 
