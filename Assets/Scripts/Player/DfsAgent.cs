@@ -67,6 +67,7 @@ public class DfsAgent : MonoBehaviour
                     Debug.Log("You died");
                     tileAudio.clip = trapClip;
                     tileAudio.Play();
+                    EventManager.Instance.Invoke(GlobalEvent.PlayerRoasted);
                     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                     break;
                 // 2: lock, possibly bugged, become normal after unlocked
@@ -122,6 +123,7 @@ public class DfsAgent : MonoBehaviour
             {
                 tileAudio.clip = targetClip;
                 tileAudio.Play();
+                EventManager.Instance.Invoke(GlobalEvent.PlayerReachedTarget);
                 yield break;
             }
 
@@ -173,6 +175,7 @@ public class DfsAgent : MonoBehaviour
         Debug.Log("Reach dead end, stack is empty, process death");
         tileAudio.clip = trapClip;
         tileAudio.Play();
+        EventManager.Instance.Invoke(GlobalEvent.PlayerReachedDeadEnd);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
