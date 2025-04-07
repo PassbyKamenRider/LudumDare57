@@ -42,6 +42,7 @@ public class Tile : MonoBehaviour
             tileType = 4;
             GameData.rockCount -= 1;
             wall = Instantiate(wallPrefab, transform.position, Quaternion.identity, transform);
+            EventManager.Instance.Invoke(GlobalEvent.AnyTileChangedByPlayer);
         }
         else if (tileType == 4)
         {
@@ -51,6 +52,7 @@ public class Tile : MonoBehaviour
             GameData.rockCount += 1;
             Destroy(wall);
             wall = null;
+            EventManager.Instance.Invoke(GlobalEvent.AnyTileChangedByPlayer);
         }
     }
 
