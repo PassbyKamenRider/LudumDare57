@@ -12,6 +12,7 @@ class CutScene : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public Animator animator;
     public int currDialogue = 0;
+    private bool isDialogueEnd;
     void OnEnable()
     {
         
@@ -50,6 +51,6 @@ class CutScene : MonoBehaviour
 
     public void EndDialogue()
     {
-        Debug.Log("Dialogue ends");
+        isDialogueEnd = true;
     }
 }
