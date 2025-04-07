@@ -239,6 +239,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1332050661633635891, guid: d8d8c5d0a4c1480459a7a1ec49562f9e, type: 3}
+      propertyPath: toScene
+      value: Level 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1332050661633635891, guid: d8d8c5d0a4c1480459a7a1ec49562f9e, type: 3}
+      propertyPath: eventToSubscribe
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5199273540249673217, guid: d8d8c5d0a4c1480459a7a1ec49562f9e, type: 3}
       propertyPath: m_Pivot.x
       value: 0

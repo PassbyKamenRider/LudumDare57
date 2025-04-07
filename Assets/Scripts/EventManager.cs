@@ -7,8 +7,13 @@ using UnityEngine;
 
 public enum GlobalEvent
 {
+    None,
     AnyTileChangedByPlayer,
-    AnyTileChangedByLevel
+    AnyTileChangedByLevel,
+    PlayerReachedDeadEnd,
+    PlayerRoasted,
+    PlayerReachedTarget,
+    LevelEnded,
 }
 
 public class EventManager : Singleton<EventManager>
