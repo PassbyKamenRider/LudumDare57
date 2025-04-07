@@ -10,4 +10,5 @@ using UnityEngine.SceneManagement;
 public class GameManager : Singleton<GameManager>
 {
     public List<string> levelNames = new List<string> {"Level 0", "Level 1", "Level 2", "Level 3", "Level 4", "Level 5", "Level 6", "Level 7"};
+    public List<int> rockCounts = new List<int>{1, 2, 8, 8, 8, 10, 10, 10};
 }

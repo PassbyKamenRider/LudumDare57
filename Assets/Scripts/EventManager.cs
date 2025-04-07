@@ -14,6 +14,8 @@ public enum GlobalEvent
     PlayerRoasted,
     PlayerReachedTarget,
     LevelEnded,
+    RunAgent,
+    ResetScene
 }
 
 public class EventManager : Singleton<EventManager>

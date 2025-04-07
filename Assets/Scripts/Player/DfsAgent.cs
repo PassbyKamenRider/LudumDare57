@@ -8,9 +8,10 @@ public class DfsAgent : MonoBehaviour
     [Header("Player Settings")]
     [SerializeField] float moveSpeed = 5.0f;
     [SerializeField] Vector3 offset = new Vector3(0, 0.3f, 0);
+    [SerializeField] GlobalEvent runAgentEvent;
     [Header("Audio Settings")]
     [SerializeField] AudioSource walkAudio, tileAudio, bumpAudio;
-    [SerializeField] AudioClip pickupClip, laserClip, trapClip, targetClip;
+    [SerializeField] AudioClip pickupClip, laserClip, trapClip;
     private bool[,] isVisited;
     private Vector2Int lastDirection = Vector2Int.zero;
     private Animator animator;
@@ -20,16 +21,17 @@ public class DfsAgent : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    void Update()
+    void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            RunDFS();
-        }
+        EventManager.Instance.AddListener(GlobalEvent.RunAgent, () => RunDFS());
+        EventManager.Instance.AddListener(GlobalEvent.PlayerRoasted, () => ProcessDeath());
     }
 
     public void RunDFS()
     {
+        if (GameData.isRunningDFS) return;
+
+        GameData.isRunningDFS = true;
         int size = TilesManager.instance.gridSize;
         isVisited = new bool[size, size];
         StartCoroutine(DFS(TilesManager.instance.startPos));
@@ -67,8 +69,8 @@ public class DfsAgent : MonoBehaviour
                     Debug.Log("You died");
                     tileAudio.clip = trapClip;
                     tileAudio.Play();
+                    GameData.isRunningDFS = false;
                     EventManager.Instance.Invoke(GlobalEvent.PlayerRoasted);
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                     break;
                 // 2: lock, possibly bugged, become normal after unlocked
                 case 2:
@@ -121,8 +123,7 @@ public class DfsAgent : MonoBehaviour
 
             if (pos == TilesManager.instance.targetPos)
             {
-                tileAudio.clip = targetClip;
-                tileAudio.Play();
+                GameData.isRunningDFS = false;
                 EventManager.Instance.Invoke(GlobalEvent.PlayerReachedTarget);
                 yield break;
             }
@@ -175,8 +176,8 @@ public class DfsAgent : MonoBehaviour
         Debug.Log("Reach dead end, stack is empty, process death");
         tileAudio.clip = trapClip;
         tileAudio.Play();
+        GameData.isRunningDFS = false;
         EventManager.Instance.Invoke(GlobalEvent.PlayerReachedDeadEnd);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private IEnumerator MoveTo(Vector3 targetPos)
@@ -201,10 +202,10 @@ public class DfsAgent : MonoBehaviour
 
         transform.position = targetPos;
 
-        if (animator != null)
-        {
-            animator.SetBool("isMoving", false);
-        }
+        // if (animator != null)
+        // {
+        //     animator.SetBool("isMoving", false);
+        // }
 
         if (walkAudio != null && walkAudio.isPlaying)
         {
@@ -218,8 +219,7 @@ public class DfsAgent : MonoBehaviour
     }
 
     private void ProcessDeath()
-    {}
-
-    private void ProcessSuccess()
-    {}
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }

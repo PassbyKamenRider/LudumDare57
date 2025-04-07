@@ -36,9 +36,11 @@ public class Tile : MonoBehaviour
         // cannot place on special tiles
         if (tileType == 0)
         {
+            if (GameData.rockCount == 0) return;
             // if is normal grid, set type to wall
             wallAudio.Play();
             tileType = 4;
+            GameData.rockCount -= 1;
             wall = Instantiate(wallPrefab, transform.position, Quaternion.identity, transform);
         }
         else if (tileType == 4)
@@ -46,6 +48,7 @@ public class Tile : MonoBehaviour
             // if is wall grid, set type to normal, remove wall
             wallAudio.Play();
             tileType = 0;
+            GameData.rockCount += 1;
             Destroy(wall);
             wall = null;
         }

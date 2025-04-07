@@ -21,6 +21,9 @@ public static class GameData
     // Player data
     public static Vector2Int playerPosition = new Vector2Int();
     public static int keyCount = 0;
+    public static bool isRunningDFS;
+    public static int rockCount = 0;
+    public static int lifeCount = 10;
 
     public static void SetPlayerPosition(Vector2Int pos)
     {

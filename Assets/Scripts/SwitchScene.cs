@@ -1,21 +1,33 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SwitchScene : MonoBehaviour
 {
-    public GlobalEvent eventToSubscribe;
+    [SerializeField] GlobalEvent switchSceneEvent, resetSceneEvent;
     public string toScene;
+    void Start()
+    {
+        if (switchSceneEvent == GlobalEvent.None)
+        {
+            return;
+        }
+        EventManager.Instance.AddListener(switchSceneEvent, () => Switch(toScene));
+        EventManager.Instance.AddListener(resetSceneEvent, () => SceneManager.LoadScene(SceneManager.GetActiveScene().name));
+    }
+
     public void Switch(string toScene)
     {
         SceneManager.LoadScene(toScene);
     }
-    void Start()
+
+    public void ResetScene()
     {
-        if (eventToSubscribe == GlobalEvent.None)
-        {
-            return;
-        }
-        EventManager.Instance.AddListener(eventToSubscribe, () => Switch(toScene));
+        EventManager.Instance.Invoke(GlobalEvent.ResetScene);   
     }
 
+    public void RunAgent()
+    {
+        EventManager.Instance.Invoke(GlobalEvent.RunAgent);
+    }
 }

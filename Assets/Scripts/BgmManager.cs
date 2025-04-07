@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class BgmManager : MonoBehaviour
 {
+    [SerializeField] GlobalEvent reachTargetEvent;
+    [SerializeField] AudioSource reachTargetAudio, playerDeathAudio;
     public static BgmManager Instance;
     private AudioSource audioSource;
 
@@ -18,6 +20,10 @@ public class BgmManager : MonoBehaviour
 
         audioSource = gameObject.GetComponent<AudioSource>();
         PlayMusic();
+
+        EventManager.Instance.AddListener(reachTargetEvent, () => reachTargetAudio.Play());
+
+        EventManager.Instance.AddListener(GlobalEvent.PlayerRoasted, () => playerDeathAudio.Play());
     }
 
     public void PlayMusic()

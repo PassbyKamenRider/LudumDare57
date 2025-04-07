@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e0375b495fe3fb244b9b5beb3164d3e3
+guid: 6e2b63ab6543cf94faa0ca7dab04c2ac
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3345545659561067759
-    second: IMG_9599_0
+      213: -5036762478249837324
+    second: UIFrame_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 128
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_9599_0
+      name: UIFrame_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2388
-        height: 1668
+        x: 97
+        y: 88
+        width: 471
+        height: 737
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 11b3306b2fb3291d0800000000000000
-      internalID: -3345545659561067759
+      spriteID: 4fcf6e14633d91ab0800000000000000
+      internalID: -5036762478249837324
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      IMG_9599_0: -3345545659561067759
+      UIFrame_0: -5036762478249837324
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
