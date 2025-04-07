@@ -36,8 +36,8 @@ public class PlayerInteraction : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(0))
                 {
-                    EventManager.Instance.Invoke(GlobalEvent.AnyTileChangedByPlayer);
                     tileSelected.OnTileClick();
+                    EventManager.Instance.Invoke(GlobalEvent.AnyTileChangedByPlayer);
                 }
             }
         }
