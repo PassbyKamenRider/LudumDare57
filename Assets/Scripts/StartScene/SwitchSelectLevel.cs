@@ -11,7 +11,7 @@ class SwitchSelectLevel : MonoBehaviour
     public Sprite[] levelSprites;
     public void HandleLevelSwitch(bool isLeft)
     {
-        int count = GameManager.Instance.levelNames.Count;
+        int count = GameData.levelReached+1;
         if (isLeft)
         {
             currentLevel = (currentLevel - 1 + count) % count;

@@ -370,19 +370,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapRows:
-  - SOO!#O#####
-  - O#OO#O##O!O
-  - OO!OOO#!OLO
-  - OOOO#O#OO#O
-  - OOOO#O#OO!O
-  - O####O#OO#O
-  - O####O#OO#O
-  - OOO!OO#OO#O
-  - '#OOO!OOOO#O'
-  - '#OOOOOOOOOB'
-  - '#!#OO#OO#!O'
-  - '#OO#O!OO!OO'
-  - '##OOLOOOBOG'
+  - SOO!#O######
+  - O#OO#O##O!OO
+  - OO!OOO#OOOLO
+  - OOOO#O#OO!#O
+  - OOOO#O#OOOOO
+  - O####O##OO#O
+  - O####O##OO#O
+  - OOO!OO##OO#O
+  - '#OOO!OO!OO#O'
+  - '#OOOOOOOOOOB'
+  - '#!#OO#OO##!O'
+  - '#OO#OO!O!OOO'
+  - '##OOLOOOBOOG'
   gridSize: 4
   tileSize: 1
   startPos: {x: 0, y: 0}

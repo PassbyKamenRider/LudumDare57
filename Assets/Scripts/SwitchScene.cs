@@ -32,12 +32,12 @@ public class SwitchScene : MonoBehaviour
     private IEnumerator IEResetScene(string toScene)
     {
         AsyncOperation op = SceneManager.LoadSceneAsync(toScene);
-        loadingVisualizer.SetActive(true);
+        if (loadingVisualizer != null) loadingVisualizer.SetActive(true);
         while (!op.isDone)
         {
             yield return null;
         }
-        loadingVisualizer.SetActive(false);
+        if (loadingVisualizer != null) loadingVisualizer.SetActive(false);
     }
 
     public void RunAgent()

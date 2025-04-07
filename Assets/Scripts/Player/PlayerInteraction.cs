@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -18,6 +19,7 @@ public class PlayerInteraction : MonoBehaviour
 
         EventManager.Instance.AddListener(GlobalEvent.PlayerRoasted, () => UpdateLife());
         EventManager.Instance.AddListener(GlobalEvent.AnyTileChangedByPlayer, () => rockCountText.text = GameData.rockCount.ToString());
+        EventManager.Instance.AddListener(GlobalEvent.PlayerReachedTarget, () => GameData.levelReached = Mathf.Max(GameData.levelReached, SceneManager.GetActiveScene().buildIndex));
     }
 
     void Update()
@@ -34,6 +36,7 @@ public class PlayerInteraction : MonoBehaviour
             tileSelected = hit.collider.GetComponent<Tile>();
             if (tileSelected != null)
             {
+                if (EventSystem.current.IsPointerOverGameObject()) return;
                 if (Input.GetMouseButtonDown(0))
                 {
                     tileSelected.OnTileClick();

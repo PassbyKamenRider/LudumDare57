@@ -4,21 +4,26 @@ public class Tile : MonoBehaviour
 {
     [SerializeField] AudioSource wallAudio;
     [SerializeField] Sprite[] tileSprites;
-    [SerializeField] SpriteRenderer spr;
+    [SerializeField] Sprite[] normalTileSprites, trapTileSprites;
+    [SerializeField] SpriteRenderer spr, itemSpr;
     [SerializeField] GameObject wallPrefab;
     [SerializeField] GameObject highlighter;
     private GameObject wall;
     private bool isTarget;
     private int tileType; // -1: no tile, 0: normal, 1: trap, 2: lock, 3: key, 4: wall
 
-    // void Start()
-    // {
-    //     EventManager.Instance.AddListener(GlobalEvent.AnyTileChangedByPlayer, AnyTileChanged);
-    // }
+    void Start()
+    {
+        EventManager.Instance.AddListener(GlobalEvent.RunAgent, () => highlighter.SetActive(false));
+    }
 
     public void UpdateTile()
     {
+        itemSpr.sprite = null;
         spr.sprite = tileSprites[tileType];
+        if (tileType == 1) spr.sprite = trapTileSprites[Random.Range(0,trapTileSprites.Length)];
+        if (tileType == 0 || tileType == 2 || tileType == 3) spr.sprite = normalTileSprites[Random.Range(0,trapTileSprites.Length)];
+        if (tileType == 2 || tileType == 3) itemSpr.sprite = tileSprites[tileType];
         if (isTarget) spr.sprite = tileSprites[tileSprites.Length-1];
     }
 

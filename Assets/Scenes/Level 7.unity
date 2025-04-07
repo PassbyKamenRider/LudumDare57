@@ -521,7 +521,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1332050661633635891, guid: d8d8c5d0a4c1480459a7a1ec49562f9e, type: 3}
       propertyPath: toScene
-      value: 
+      value: EndScene
       objectReference: {fileID: 0}
     - target: {fileID: 1332050661633635891, guid: d8d8c5d0a4c1480459a7a1ec49562f9e, type: 3}
       propertyPath: eventToSubscribe

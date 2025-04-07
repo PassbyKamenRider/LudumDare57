@@ -24,6 +24,7 @@ public static class GameData
     public static bool isRunningDFS;
     public static int rockCount = 0;
     public static int lifeCount = 10;
+    public static int levelReached = 0;
 
     public static void SetPlayerPosition(Vector2Int pos)
     {
