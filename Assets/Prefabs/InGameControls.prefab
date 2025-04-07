@@ -1215,7 +1215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadingVisualizer: {fileID: 3278775173519063601}
-  switchSceneEvent: 5
+  switchSceneEvent: 6
   resetSceneEvent: 8
   toScene: Level 1
 --- !u!114 &7281279409491904740

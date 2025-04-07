@@ -8,22 +8,30 @@ using UnityEditor.Animations;
 
 class CutScene : MonoBehaviour
 {
+    public GlobalEvent activateEvent;
     public float deltaT = 0.1f;
     public TextMeshProUGUI dialogueText;
     public Animator animator;
     public int currDialogue = 0;
     private bool isDialogueEnd;
-    void OnEnable()
+    void Start()
     {
-        
+        EventManager.Instance.AddListener(activateEvent, StartAnim);
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(false);
+        }
+        animator.enabled = false;
     }
 
-    // public void PlayNextDialogue()
-    // {
-    //     StartCoroutine(TypeSentence(sentences[currDialogue]));
-    //     currDialogue += 1;
-    // }
-
+    void StartAnim()
+    {
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(true);
+        }
+        animator.enabled = true;
+    }
     private IEnumerator TypeSentence(string sentence)
     {     
         bool flag = false;
@@ -45,7 +53,8 @@ class CutScene : MonoBehaviour
         yield return null;
         while (!Input.anyKeyDown) { yield return null; }
         yield return null;
-        animator.SetTrigger("next");
+        if (isDialogueEnd) { EventManager.Instance.Invoke(GlobalEvent.LevelEnded); }
+        else { animator.SetTrigger("next"); }
         yield break;
     }
 
