@@ -524,6 +524,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5340208303801376881, guid: d8d8c5d0a4c1480459a7a1ec49562f9e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5981905512742169812, guid: d8d8c5d0a4c1480459a7a1ec49562f9e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5981905512742169812, guid: d8d8c5d0a4c1480459a7a1ec49562f9e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9146541340007296285, guid: d8d8c5d0a4c1480459a7a1ec49562f9e, type: 3}
       propertyPath: m_Name
       value: InGameUI
