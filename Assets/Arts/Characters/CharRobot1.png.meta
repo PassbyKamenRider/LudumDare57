@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e7930a7c6187bad44aeee9dd5969f42f
+guid: de65e12647fb3fe4c95312de6ee097b1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3848336016124865164
-    second: UIMenu_0
+      213: 1702932112438466307
+    second: CharRobot1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UIMenu_0
+      name: CharRobot1_0
       rect:
         serializedVersion: 2
-        x: 73
-        y: 93
-        width: 476
-        height: 146
+        x: 217
+        y: 0
+        width: 954
+        height: 698
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c8ae671a739086530800000000000000
-      internalID: 3848336016124865164
+      spriteID: 3071086dbb702a710800000000000000
+      internalID: 1702932112438466307
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UIMenu_0: 3848336016124865164
+      CharRobot1_0: 1702932112438466307
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

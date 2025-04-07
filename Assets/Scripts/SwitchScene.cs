@@ -23,6 +23,7 @@ public class SwitchScene : MonoBehaviour
 
     public void ResetScene()
     {
+        GameData.isRunningDFS = false;
         EventManager.Instance.Invoke(GlobalEvent.ResetScene);   
     }
 

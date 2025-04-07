@@ -47,4 +47,9 @@ class CutScene : MonoBehaviour
         animator.SetTrigger("next");
         yield break;
     }
+
+    public void EndDialogue()
+    {
+        Debug.Log("Dialogue ends");
+    }
 }
