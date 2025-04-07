@@ -6,6 +6,7 @@ public class Tile : MonoBehaviour
     [SerializeField] Sprite[] tileSprites;
     [SerializeField] SpriteRenderer spr;
     [SerializeField] GameObject wallPrefab;
+    [SerializeField] GameObject highlighter;
     private GameObject wall;
     private bool isTarget;
     private int tileType; // -1: no tile, 0: normal, 1: trap, 2: lock, 3: key, 4: wall
@@ -42,7 +43,7 @@ public class Tile : MonoBehaviour
             tileType = 4;
             GameData.rockCount -= 1;
             wall = Instantiate(wallPrefab, transform.position, Quaternion.identity, transform);
-            EventManager.Instance.Invoke(GlobalEvent.AnyTileChangedByPlayer);
+            //EventManager.Instance.Invoke(GlobalEvent.AnyTileChangedByPlayer);
         }
         else if (tileType == 4)
         {
@@ -52,7 +53,21 @@ public class Tile : MonoBehaviour
             GameData.rockCount += 1;
             Destroy(wall);
             wall = null;
-            EventManager.Instance.Invoke(GlobalEvent.AnyTileChangedByPlayer);
+            //EventManager.Instance.Invoke(GlobalEvent.AnyTileChangedByPlayer);
+        }
+    }
+
+    public void OnTileHover(bool onAnything)
+    {
+        if (!onAnything) { highlighter.SetActive(false); return; }
+        if (tileType == 0 || tileType == 4)
+        {
+            highlighter.SetActive(true);
+            highlighter.transform.position = transform.position;
+        }
+        else
+        {
+            highlighter.SetActive(false);
         }
     }
 
