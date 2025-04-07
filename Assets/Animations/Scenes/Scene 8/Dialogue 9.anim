@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dialogue 1
+  m_Name: Dialogue 9
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,7 +21,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -1, y: 1, z: 1}
+        value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -39,7 +39,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 284.5
+        value: 618
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -60,7 +60,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 679.5
+        value: 681.5
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -81,7 +81,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -311
+        value: -360
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -102,7 +102,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 341.5
+        value: 276
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -123,7 +123,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 474
+        value: 828.5
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -205,7 +205,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 2592984529469741063, guid: 4f2f8d69333f700469ac925ec0a7e234, type: 3}
+      value: {fileID: -7302841536831881765, guid: ff5c699cac2b76d4ba57e73e13ac0ad6, type: 3}
     attribute: m_Sprite
     path: CharacterLeft
     classID: 114
@@ -214,7 +214,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -5930943870532523411, guid: 0841a16b424d6b946b90e99fc5cc7447, type: 3}
+      value: {fileID: -5008612305645565947, guid: 48316b669e89af045bf700b9e29cd3fb, type: 3}
     attribute: m_Sprite
     path: CharacterRight
     classID: 114
@@ -327,8 +327,8 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 2592984529469741063, guid: 4f2f8d69333f700469ac925ec0a7e234, type: 3}
-    - {fileID: -5930943870532523411, guid: 0841a16b424d6b946b90e99fc5cc7447, type: 3}
+    - {fileID: -7302841536831881765, guid: ff5c699cac2b76d4ba57e73e13ac0ad6, type: 3}
+    - {fileID: -5008612305645565947, guid: 48316b669e89af045bf700b9e29cd3fb, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -356,7 +356,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 284.5
+        value: 618
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -377,7 +377,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 679.5
+        value: 681.5
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -398,7 +398,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -311
+        value: -360
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -419,7 +419,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -1
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -482,7 +482,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 341.5
+        value: 276
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -503,7 +503,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 474
+        value: 828.5
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -587,7 +587,7 @@ AnimationClip:
   m_Events:
   - time: 0.16666667
     functionName: TypeSentence
-    data: What in damnation are you?
+    data: NO! The data isn't... My research isn't...
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
