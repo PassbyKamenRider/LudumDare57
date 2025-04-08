@@ -13,14 +13,14 @@ public class DragCamera : MonoBehaviour
     void Update()
     {
         // When the middle mouse button is pressed, start dragging
-        if (Input.GetMouseButtonDown(2))
+        if (Input.GetMouseButtonDown(1))
         {
             isDragging = true;
             lastMousePosition = Input.mousePosition;
         }
 
         // When the middle mouse button is released, stop dragging
-        if (Input.GetMouseButtonUp(2))
+        if (Input.GetMouseButtonUp(1))
         {
             isDragging = false;
         }

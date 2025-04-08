@@ -2,9 +2,6 @@ using System.Collections.Generic;
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using UnityEditor.Animations;
 
 class CutScene : MonoBehaviour
 {
